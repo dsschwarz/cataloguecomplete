@@ -1,0 +1,11 @@
+<% provide(:title, "Articles") %>
+<% @articles.each do |article| %>
+	<h2><%= article.picture %></h2>
+<% end %>
+
+<% if @matches %><br>
+<%= @matches %><br>
+<% @matches.keys.sort.each do |key| %>
+  <%= key  %> : <%= @matches[key] %> <br>
+<% end %>
+<% end %>
