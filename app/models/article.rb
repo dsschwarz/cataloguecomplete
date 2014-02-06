@@ -1,3 +1,5 @@
+require "open-uri"
+require "net/http"
 class Article < ActiveRecord::Base
 	belongs_to :user
   attr_accessible :picture
