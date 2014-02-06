@@ -2,5 +2,6 @@ Catalogue Complete
 
 A fashion app for users to find other users modeling articles of clothing.
 
+Demo at catalogue-complete.heroku.com
 
 Glyphicons from glyphicons.com
