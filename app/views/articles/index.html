@@ -34,7 +34,8 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-	    $('#imageGallery img').each(function() {
+		var container = $('#imageGallery');
+	    $('#imageGallery img').load(function() {
 	        var maxWidth = 200; // Max width for the image
 	        var maxHeight = 400;    // Max height for the image
 	        var ratio = 0;  // Used for aspect ratio
@@ -57,8 +58,12 @@
 	            $(this).css("width", width * ratio);    // Scale width based on ratio
 	            width = width * ratio;    // Reset width to match scaled image
 	        }
+	        // Reload the layout everytime
+			container.masonry({
+			  columnWidth: 200,
+			  itemSelector: '.img'
+			});
 		});
-		var container = $('#imageGallery');
 		// initialize
 		container.masonry({
 		  columnWidth: 200,
