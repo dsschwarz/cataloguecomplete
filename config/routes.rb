@@ -2,7 +2,14 @@ Cataloguecomplete::Application.routes.draw do
   resources :users
   resources :articles
   root to: "articles#index"
+
+  
+  resources :sessions, only: :create
+
+  match "/",          to: "application#home", :as => :home
   match '/signup',  to: 'users#new', via: 'get'
+  match "/signin",    to: "sessions#new"
+  match "/signout",    to: "sessions#destroy"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

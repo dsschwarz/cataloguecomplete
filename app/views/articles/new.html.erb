@@ -1,13 +1,16 @@
-<% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
+<% provide(:title, 'Post') %>
 
 <div class="row">
-  <div class="span6 offset3">
+  <div class="col-sm-3 col-sm-offset-3">
+	<h1>Create Post</h1>
     <%= form_for @article do |f| %>
 
       <%= f.label :picture, text: "Link to picture" %>
-      <%= f.text_field :picture %>
+      <%= f.text_field :picture, class: "form-control" %>
 
+      <%= label_tag "Tags" %>
+      <%= text_field_tag :tags, "", class: "form-control" %>
+      <br>
       <%= f.submit "Done", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>

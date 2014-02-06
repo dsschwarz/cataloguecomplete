@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+	skip_before_filter :session_exists
 	def new
 		@user = User.new
 	end
@@ -6,7 +7,8 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(params[:user])    # Not the final implementation!
 		if @user.save
-		  # Handle a successful save.
+			sign_in @user
+		  redirect_to articles_path
 		else
 			render 'new'
 		end
