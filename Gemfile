@@ -25,6 +25,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+#sphinx bridge for rails
+gem 'thinking-sphinx', '2.0.5'
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password

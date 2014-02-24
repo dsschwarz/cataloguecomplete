@@ -5,7 +5,7 @@ class Article < ActiveRecord::Base
   attr_accessible :picture
   has_and_belongs_to_many :tags, uniq: true
   before_save :remote_file_exists
-
+  
 	def remote_file_exists
 		begin
 	    url = URI.parse(self.picture)
@@ -16,4 +16,5 @@ class Article < ActiveRecord::Base
 	  	return false
 	  end
 	end
+   SIZE = ['S','M','L']
 end

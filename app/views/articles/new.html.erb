@@ -7,10 +7,13 @@
 
       <%= f.label :picture, text: "Link to picture" %>
       <%= f.text_field :picture, class: "form-control" %>
-
-      <%= label_tag "Tags" %>
+      <%= label_tag "Brand" %>
       <%= text_field_tag :tags, "", class: "form-control" %>
-      <br>
+      <%= label_tag "Size" %> 
+      <%= f.collection_select :size, Article::SIZES, :to_s, :to_s, :include_blank => false class: "form-control"%>
+      <%= label_tag "Descriptive Tags"%>
+       <%= text_field_tag :tags, "", class: "form-control" %>
+     
       <%= f.submit "Done", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>
